@@ -1,8 +1,12 @@
+import { Play } from "phosphor-react";
+
+import { CountdownContainer, FormContainer, HomeContainer } from "./styles";
+
 export function Home() {
   return (
-    <div>
+    <HomeContainer>
       <form action="">
-        <div>
+        <FormContainer>
           <label htmlFor="task">Vou trabalhar em</label>
           <input type="task" />
 
@@ -10,18 +14,21 @@ export function Home() {
           <input type="number" id="minutesAmount" />
 
           <span>minutos.</span>
-        </div>
+        </FormContainer>
 
-        <div>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <CountdownContainer>
+          <span>0</span>
+          <span>0</span>
+          <span>:</span>
+          <span>0</span>
+          <span>0</span>
+        </CountdownContainer>
 
-        <button type="submit"></button>
+        <button type="submit">
+          <Play  size={24} />
+          Começar
+        </button>
       </form>
-    </div>
+    </HomeContainer>
   );
 }
