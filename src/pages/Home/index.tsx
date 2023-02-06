@@ -59,6 +59,8 @@ export function Home() {
 
   const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
 
+  console.log(activeCycle)
+
   const task = watch("task");
   const isSubmitDisabled = !task;
 
@@ -88,7 +90,7 @@ export function Home() {
             step={5}
             min={5}
             max={60}
-            {...register("minutesAmount")}
+            {...register("minutesAmount", {valueAsNumber: true })}
           />
 
           <span>minutos.</span>
