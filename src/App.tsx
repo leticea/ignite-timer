@@ -18,3 +18,5 @@ export function App() {
     </ThemeProvider>
   );
 }
+
+// ReactNode é qualquer HTML e JSX válido, ou seja, é a tipagem para o html;
