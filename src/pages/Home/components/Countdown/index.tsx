@@ -34,7 +34,7 @@ export function Countdown() {
     return () => {
       clearInterval(interval);
     };
-  }, [activeCycle, totalSeconds, activeCycleId]);
+  }, [activeCycle, totalSeconds, activeCycleId, markCurrentCycleAsFinished]);
 
   const currentSeconds = activeCycle ? totalSeconds - amountSecondsPassed : 0;
 
