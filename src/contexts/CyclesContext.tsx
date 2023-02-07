@@ -20,7 +20,8 @@ interface CyclesContextType {
   amountSecondsPassed: number;
   markCurrentCycleAsFinished: () => void;
   setSecondsPassed: (seconds: number) => void;
-  createNewCycle:
+  createNewCycle: (data: CreateCycleData) => void;
+  interruptCurrentCycle: () => void;
 }
 
 export const CyclesContext = createContext({} as CyclesContextType);
@@ -48,7 +49,7 @@ export function CyclesContextProvider() {
     );
   }
 
-  function createNewCycle(data: NewCycleFormData) {
+  function createNewCycle(data: CreateCycleData) {
     const id = String(new Date().getTime());
 
     const newCycle: Cycle = {
@@ -62,7 +63,7 @@ export function CyclesContextProvider() {
     setActiveCycleId(id);
     setAmountSecondsPassed(0);
 
-    reset();
+    //reset();
   }
 
   function interruptCurrentCycle() {
@@ -86,8 +87,9 @@ export function CyclesContextProvider() {
         markCurrentCycleAsFinished,
         amountSecondsPassed,
         setSecondsPassed,
+        createNewCycle,
+        interruptCurrentCycle,
       }}
-    >
-    </CyclesContext.Provider>
+    ></CyclesContext.Provider>
   );
 }
