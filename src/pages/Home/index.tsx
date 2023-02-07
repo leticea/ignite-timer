@@ -20,7 +20,7 @@ const newCycleFormValidationSchema = zod.object({
   task: zod.string().min(1, "Informe a tarefa"),
   minutesAmount: zod
     .number()
-    .min(5, "O ciclo precisa ser de no mínimo 5 minutos.")
+    .min(1, "O ciclo precisa ser de no mínimo 5 minutos.")
     .max(60, "O ciclo precisa ser de no máximo 60 minutos."),
 });
 
@@ -72,6 +72,9 @@ export function Home() {
               }
             })
           );
+
+          setAmountSecondsPassed(totalSeconds);
+          clearInterval(interval);
         } else {
           setAmountSecondsPassed(secondsDifference);
         }
@@ -130,8 +133,6 @@ export function Home() {
   const task = watch("task");
   const isSubmitDisabled = !task;
 
-  console.log(cycles);
-
   return (
     <HomeContainer>
       <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
@@ -157,7 +158,7 @@ export function Home() {
             id="minutesAmount"
             placeholder="00"
             step={5}
-            min={5}
+            min={1}
             max={60}
             disabled={!!activeCycle}
             {...register("minutesAmount", { valueAsNumber: true })}
