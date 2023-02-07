@@ -27,7 +27,17 @@ export function History() {
                   <td>{cycle.minutesAmount} minutos</td>
                   <td>{cycle.startDate.toISOString()}</td>
                   <td>
-                    <Status statusColor="green">Concluído</Status>
+                    {cycle.finishedDate && (
+                      <Status statusColor="green">Concluído</Status>
+                    )}
+
+                    {cycle.interruptedDate && (
+                      <Status statusColor="red">Interrompido</Status>
+                    )}
+
+                    {!cycle.interruptedDate && !cycle.interruptedDate && (
+                      <Status statusColor="yellow">Em andamento</Status>
+                    )}
                   </td>
                 </tr>
               );
