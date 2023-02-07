@@ -32,7 +32,7 @@ interface Cycle {
   minutesAmount: number;
   startDate: Date;
   interruptedDate?: Date;
-  finisheddDate?: Date;
+  finishedDate?: Date;
 }
 
 export function Home() {
@@ -63,10 +63,10 @@ export function Home() {
         );
 
         if (secondsDifference >= totalSeconds) {
-          setCycles(
-            cycles.map((cycle) => {
+          setCycles((state) =>
+            state.map((cycle) => {
               if (cycle.id === activeCycleId) {
-                return { ...cycle, interruptedDate: new Date() };
+                return { ...cycle, finishedDate: new Date() };
               } else {
                 return cycle;
               }
@@ -81,7 +81,7 @@ export function Home() {
     return () => {
       clearInterval(interval);
     };
-  }, [activeCycle, totalSeconds]);
+  }, [activeCycle, totalSeconds, activeCycleId]);
 
   function handleCreateNewCycle(data: NewCycleFormData) {
     const id = String(new Date().getTime());
@@ -101,8 +101,8 @@ export function Home() {
   }
 
   function handleInterruptCycle() {
-    setCycles(
-      cycles.map((cycle) => {
+    setCycles((state) =>
+      state.map((cycle) => {
         if (cycle.id === activeCycleId) {
           return { ...cycle, interruptedDate: new Date() };
         } else {
