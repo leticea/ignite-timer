@@ -63,6 +63,10 @@ export function CyclesContextProvider({
         };
       }
 
+      if (action.type === "MARK_CURRENT_CYCLE_AS_FINISHED") {
+        
+      }
+
       return state;
     },
     {
@@ -124,7 +128,7 @@ export function CyclesContextProvider({
     dispatch({
       type: "INTERRUPT_CURRENT_CYCLE",
       payload: {
-        data: activeCycleId,
+        activeCycleId,
       },
     });
   }
