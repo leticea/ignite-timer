@@ -37,9 +37,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-Projeto desenvolvido com React de um cronômetro e salvando no banco de dados o histórico.
+Projeto desenvolvido com React de um cronômetro e salvando no local storage os dados do histórico.
 
-Módulo do Ignite na plataforma da [Rocketseat](https://www.rocketseat.com.br/).
+Módulo ReactJS do Ignite na plataforma da [Rocketseat](https://www.rocketseat.com.br/).
 
 ## 🚀 Como Rodar
 
