@@ -19,7 +19,7 @@
   <img alt="" src=".github/image3.png">
 </p>
 
-## Ignite Timer
+# Ignite Timer
 
 ## 🚀 Tecnologias
 
@@ -41,7 +41,7 @@ Projeto desenvolvido com React de um cronômetro e salvando no local storage os 
 
 - Módulo ReactJS do Ignite na plataforma da [Rocketseat](https://www.rocketseat.com.br/).
 
-## 🚀 Como Rodar
+## ⚙️ Como Rodar
 
 - Clone o projeto.
 - Entre na pasta do projeto e rode 'npm install' (use 'yarn install' se for essa a sua configuração).
